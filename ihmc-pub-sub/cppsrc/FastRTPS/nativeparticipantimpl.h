@@ -19,6 +19,8 @@
 #include <memory>
 #include <vector>
 
+#include <fastdds/dds/domain/DomainParticipant.hpp>
+#include <fastdds/dds/domain/DomainParticipantFactory.hpp>
 
 #include <fastrtps/attributes/ParticipantAttributes.h>
 
@@ -36,7 +38,8 @@
 #include "commonfunctions.h"
 
 
-using namespace eprosima::fastrtps;
+using namespace eprosima::fastdds;
+using namespace eprosima::fastdds::dds;
 using namespace eprosima::fastrtps::rtps;
 
 namespace us{
@@ -48,13 +51,13 @@ namespace fastRTPS{
     class NativeParticipantListener
     {
     public:
-        virtual void onParticipantDiscovery(int64_t infoPtr, int64_t guidHigh, int64_t guidLow, ParticipantDiscoveryInfo::DISCOVERY_STATUS status) {}
+//        virtual void onParticipantDiscovery(int64_t infoPtr, int64_t guidHigh, int64_t guidLow, ParticipantDiscoveryInfo::DISCOVERY_STATUS status) {}
 
-        virtual void onPublisherDiscovery(WriterDiscoveryInfo::DISCOVERY_STATUS discovery_status, int64_t guidHigh, int64_t guidLow, const RemoteLocatorList* remoteLocatorList, int64_t participantGuidHigh, int64_t participantGuidLow,
-                                          std::string typeName, std::string topicName, int32_t userDefinedId, int64_t typeMaxSerialized,  TopicKind_t topicKind, const WriterQos* writerQoS) {}
+//        virtual void onPublisherDiscovery(WriterDiscoveryInfo::DISCOVERY_STATUS discovery_status, int64_t guidHigh, int64_t guidLow, const RemoteLocatorList* remoteLocatorList, int64_t participantGuidHigh, int64_t participantGuidLow,
+//                                          std::string typeName, std::string topicName, int32_t userDefinedId, int64_t typeMaxSerialized,  TopicKind_t topicKind, const WriterQos* writerQoS) {}
 
-        virtual void onSubscriberDiscovery(ReaderDiscoveryInfo::DISCOVERY_STATUS discovery_status, int64_t guidHigh, int64_t guidLow, bool expectsInlineQos, const RemoteLocatorList* remoteLocatorList, int64_t participantGuidHigh, int64_t participantGuidLow,
-                                           std::string typeName, std::string topicName, int32_t userDefinedId, TopicKind_t topicKind, const ReaderQos* readerQoS) {}
+//        virtual void onSubscriberDiscovery(ReaderDiscoveryInfo::DISCOVERY_STATUS discovery_status, int64_t guidHigh, int64_t guidLow, bool expectsInlineQos, const RemoteLocatorList* remoteLocatorList, int64_t participantGuidHigh, int64_t participantGuidLow,
+//                                           std::string typeName, std::string topicName, int32_t userDefinedId, TopicKind_t topicKind, const ReaderQos* readerQoS) {}
 
 
         std::string getName(int64_t infoPtr);
@@ -65,18 +68,18 @@ namespace fastRTPS{
     class NativeParticipantImpl
     {
     public:
-        NativeParticipantImpl(int domainId, RTPSParticipantAttributes& rtps, NativeParticipantListener* listener) throw(FastRTPSException);
+        NativeParticipantImpl(int domainId, std::string qosName, std::string qosXML, NativeParticipantListener* listener) throw(FastRTPSException);
         int64_t getGuidLow();
         int64_t getGuidHigh();
-        Participant* getParticipant();
+        DomainParticipant* getParticipant();
         void registerType(std::string name, int32_t maximumDataSize, bool hasKey);
         virtual ~NativeParticipantImpl();
 
     private:
-        Participant* part;
+        DomainParticipant* part;
         NativeParticipantListener* listener;
         GuidUnion guid;
-        std::vector<std::shared_ptr<RawTopicDataType>> registeredTypes;
+        std::vector<TypeSupport> registeredTypes;
 
         class MyParticipantListener : public eprosima::fastrtps::ParticipantListener
         {
@@ -84,6 +87,7 @@ namespace fastRTPS{
                 MyParticipantListener(NativeParticipantImpl* impl): mp_participantimpl(impl){}
                 virtual ~MyParticipantListener(){}
 
+                /*
                 void onParticipantDiscovery(Participant* participant, eprosima::fastrtps::rtps::ParticipantDiscoveryInfo&& info) override;
 
                 void onSubscriberDiscovery(
@@ -93,7 +97,7 @@ namespace fastRTPS{
                 void onPublisherDiscovery(
                         eprosima::fastrtps::Participant * participant,
                         eprosima::fastrtps::rtps::WriterDiscoveryInfo  && info) override;
-
+                */
                 NativeParticipantImpl* mp_participantimpl;
         } m_rtps_listener;
 

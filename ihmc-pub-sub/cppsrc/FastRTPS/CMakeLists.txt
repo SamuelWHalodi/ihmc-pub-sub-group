@@ -7,6 +7,7 @@ add_library(FastRTPSNativeImpl
             nativepublisherimpl
             nativesubscriberimpl
             rawtopicdatatype
+            xmlprofilehelper
             loglevel
             ${HEADER_FILES}
 )
