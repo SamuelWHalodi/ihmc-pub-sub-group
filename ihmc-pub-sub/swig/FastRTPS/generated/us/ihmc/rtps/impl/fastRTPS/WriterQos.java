@@ -211,15 +211,6 @@ public class WriterQos {
     return (cPtr == 0) ? null : new DisablePositiveACKsQosPolicy(cPtr, false);
   }
 
-  public void setData_sharing(DataSharingQosPolicy value) {
-    FastRTPSJNI.WriterQos_data_sharing_set(swigCPtr, this, DataSharingQosPolicy.getCPtr(value), value);
-  }
-
-  public DataSharingQosPolicy getData_sharing() {
-    long cPtr = FastRTPSJNI.WriterQos_data_sharing_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new DataSharingQosPolicy(cPtr, false);
-  }
-
   public void setQos(WriterQos qos, boolean first_time) {
     FastRTPSJNI.WriterQos_setQos(swigCPtr, this, WriterQos.getCPtr(qos), qos, first_time);
   }

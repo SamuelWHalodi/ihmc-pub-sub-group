@@ -62,31 +62,31 @@ public class BuiltinAttributes {
     return (cPtr == 0) ? null : new TypeLookupSettings(cPtr, false);
   }
 
-  public void setMetatrafficUnicastLocatorList(LocatorList value) {
-    FastRTPSJNI.BuiltinAttributes_metatrafficUnicastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMetatrafficUnicastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.BuiltinAttributes_metatrafficUnicastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMetatrafficUnicastLocatorList() {
+  public LocatorList_t getMetatrafficUnicastLocatorList() {
     long cPtr = FastRTPSJNI.BuiltinAttributes_metatrafficUnicastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setMetatrafficMulticastLocatorList(LocatorList value) {
-    FastRTPSJNI.BuiltinAttributes_metatrafficMulticastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMetatrafficMulticastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.BuiltinAttributes_metatrafficMulticastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMetatrafficMulticastLocatorList() {
+  public LocatorList_t getMetatrafficMulticastLocatorList() {
     long cPtr = FastRTPSJNI.BuiltinAttributes_metatrafficMulticastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setInitialPeersList(LocatorList value) {
-    FastRTPSJNI.BuiltinAttributes_initialPeersList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setInitialPeersList(LocatorList_t value) {
+    FastRTPSJNI.BuiltinAttributes_initialPeersList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getInitialPeersList() {
+  public LocatorList_t getInitialPeersList() {
     long cPtr = FastRTPSJNI.BuiltinAttributes_initialPeersList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
   public void setReaderHistoryMemoryPolicy(MemoryManagementPolicy_t value) {

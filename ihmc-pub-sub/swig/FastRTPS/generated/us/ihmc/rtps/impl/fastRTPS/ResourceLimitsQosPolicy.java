@@ -68,14 +68,6 @@ public class ResourceLimitsQosPolicy extends QosPolicy {
     return FastRTPSJNI.ResourceLimitsQosPolicy_allocated_samples_get(swigCPtr, this);
   }
 
-  public void setExtra_samples(int value) {
-    FastRTPSJNI.ResourceLimitsQosPolicy_extra_samples_set(swigCPtr, this, value);
-  }
-
-  public int getExtra_samples() {
-    return FastRTPSJNI.ResourceLimitsQosPolicy_extra_samples_get(swigCPtr, this);
-  }
-
   public ResourceLimitsQosPolicy() {
     this(FastRTPSJNI.new_ResourceLimitsQosPolicy(), true);
   }

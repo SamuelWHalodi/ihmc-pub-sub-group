@@ -86,22 +86,22 @@ public class WireProtocolConfigQos extends QosPolicy {
     return (cPtr == 0) ? null : new ThroughputControllerDescriptor(cPtr, false);
   }
 
-  public void setDefault_unicast_locator_list(LocatorList value) {
-    FastRTPSJNI.WireProtocolConfigQos_default_unicast_locator_list_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setDefault_unicast_locator_list(LocatorList_t value) {
+    FastRTPSJNI.WireProtocolConfigQos_default_unicast_locator_list_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getDefault_unicast_locator_list() {
+  public LocatorList_t getDefault_unicast_locator_list() {
     long cPtr = FastRTPSJNI.WireProtocolConfigQos_default_unicast_locator_list_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setDefault_multicast_locator_list(LocatorList value) {
-    FastRTPSJNI.WireProtocolConfigQos_default_multicast_locator_list_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setDefault_multicast_locator_list(LocatorList_t value) {
+    FastRTPSJNI.WireProtocolConfigQos_default_multicast_locator_list_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getDefault_multicast_locator_list() {
+  public LocatorList_t getDefault_multicast_locator_list() {
     long cPtr = FastRTPSJNI.WireProtocolConfigQos_default_multicast_locator_list_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
 }

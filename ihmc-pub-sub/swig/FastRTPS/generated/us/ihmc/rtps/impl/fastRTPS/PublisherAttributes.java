@@ -67,31 +67,31 @@ public class PublisherAttributes {
     return (cPtr == 0) ? null : new WriterTimes(cPtr, false);
   }
 
-  public void setUnicastLocatorList(LocatorList value) {
-    FastRTPSJNI.PublisherAttributes_unicastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setUnicastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.PublisherAttributes_unicastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getUnicastLocatorList() {
+  public LocatorList_t getUnicastLocatorList() {
     long cPtr = FastRTPSJNI.PublisherAttributes_unicastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setMulticastLocatorList(LocatorList value) {
-    FastRTPSJNI.PublisherAttributes_multicastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMulticastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.PublisherAttributes_multicastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMulticastLocatorList() {
+  public LocatorList_t getMulticastLocatorList() {
     long cPtr = FastRTPSJNI.PublisherAttributes_multicastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setRemoteLocatorList(LocatorList value) {
-    FastRTPSJNI.PublisherAttributes_remoteLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setRemoteLocatorList(LocatorList_t value) {
+    FastRTPSJNI.PublisherAttributes_remoteLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getRemoteLocatorList() {
+  public LocatorList_t getRemoteLocatorList() {
     long cPtr = FastRTPSJNI.PublisherAttributes_remoteLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
   public void setThroughputController(ThroughputControllerDescriptor value) {

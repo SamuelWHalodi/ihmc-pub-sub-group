@@ -72,22 +72,22 @@ public class RemoteServerAttributes {
     return FastRTPSJNI.RemoteServerAttributes_ReadguidPrefix(swigCPtr, this, pfx);
   }
 
-  public void setMetatrafficUnicastLocatorList(LocatorList value) {
-    FastRTPSJNI.RemoteServerAttributes_metatrafficUnicastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMetatrafficUnicastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.RemoteServerAttributes_metatrafficUnicastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMetatrafficUnicastLocatorList() {
+  public LocatorList_t getMetatrafficUnicastLocatorList() {
     long cPtr = FastRTPSJNI.RemoteServerAttributes_metatrafficUnicastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setMetatrafficMulticastLocatorList(LocatorList value) {
-    FastRTPSJNI.RemoteServerAttributes_metatrafficMulticastLocatorList_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMetatrafficMulticastLocatorList(LocatorList_t value) {
+    FastRTPSJNI.RemoteServerAttributes_metatrafficMulticastLocatorList_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMetatrafficMulticastLocatorList() {
+  public LocatorList_t getMetatrafficMulticastLocatorList() {
     long cPtr = FastRTPSJNI.RemoteServerAttributes_metatrafficMulticastLocatorList_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
   public void setGuidPrefix(SWIGTYPE_p_eprosima__fastrtps__rtps__GuidPrefix_t value) {

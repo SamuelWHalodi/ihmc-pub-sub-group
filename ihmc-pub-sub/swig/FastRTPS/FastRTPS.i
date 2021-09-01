@@ -91,7 +91,6 @@ namespace fastrtps{
         %ignore RemoteWriterAttributes::guid;
         %ignore GUID_t;
         
-        
     }
     %ignore TopicAttributes::getTopicDiscoveryKind;
     %ignore TopicAttributes::getTopicKind;
@@ -108,14 +107,13 @@ namespace fastrtps{
 
 %{
 #include <fastdds/rtps/common/Locator.h>
-#include <fastdds/rtps/common/LocatorList.hpp>
+//#include <fastdds/rtps/common/LocatorList.hpp>
 #include <fastdds/dds/core/policy/QosPolicies.hpp>
 
 #include <fastrtps/rtps/common/Time_t.h>
 #include <fastrtps/rtps/flowcontrol/ThroughputControllerDescriptor.h>
 #include <fastrtps/rtps/attributes/RTPSParticipantAttributes.h>
 #include <fastdds/rtps/attributes/ServerAttributes.h>
-
 
 %}
 
@@ -159,7 +157,7 @@ namespace rtps{
 }}
 
 %include <fastdds/rtps/common/Locator.h>
-%include <fastdds/rtps/common/LocatorList.hpp>
+//%include <fastdds/rtps/common/LocatorList.hpp>
 %include <fastrtps/rtps/attributes/RTPSParticipantAttributes.h>
 %include <fastdds/rtps/attributes/RTPSParticipantAttributes.h>
 %include <fastdds/rtps/attributes/ServerAttributes.h>

@@ -40,31 +40,31 @@ public class RTPSEndpointQos {
     this(FastRTPSJNI.new_RTPSEndpointQos(), true);
   }
 
-  public void setUnicast_locator_list(LocatorList value) {
-    FastRTPSJNI.RTPSEndpointQos_unicast_locator_list_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setUnicast_locator_list(LocatorList_t value) {
+    FastRTPSJNI.RTPSEndpointQos_unicast_locator_list_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getUnicast_locator_list() {
+  public LocatorList_t getUnicast_locator_list() {
     long cPtr = FastRTPSJNI.RTPSEndpointQos_unicast_locator_list_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setMulticast_locator_list(LocatorList value) {
-    FastRTPSJNI.RTPSEndpointQos_multicast_locator_list_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setMulticast_locator_list(LocatorList_t value) {
+    FastRTPSJNI.RTPSEndpointQos_multicast_locator_list_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getMulticast_locator_list() {
+  public LocatorList_t getMulticast_locator_list() {
     long cPtr = FastRTPSJNI.RTPSEndpointQos_multicast_locator_list_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
-  public void setRemote_locator_list(LocatorList value) {
-    FastRTPSJNI.RTPSEndpointQos_remote_locator_list_set(swigCPtr, this, LocatorList.getCPtr(value), value);
+  public void setRemote_locator_list(LocatorList_t value) {
+    FastRTPSJNI.RTPSEndpointQos_remote_locator_list_set(swigCPtr, this, LocatorList_t.getCPtr(value), value);
   }
 
-  public LocatorList getRemote_locator_list() {
+  public LocatorList_t getRemote_locator_list() {
     long cPtr = FastRTPSJNI.RTPSEndpointQos_remote_locator_list_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new LocatorList(cPtr, false);
+    return (cPtr == 0) ? null : new LocatorList_t(cPtr, false);
   }
 
   public void setUser_defined_id(short value) {

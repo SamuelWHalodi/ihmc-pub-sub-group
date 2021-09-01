@@ -143,12 +143,4 @@ public class DiscoverySettings {
     FastRTPSJNI.DiscoverySettings_setStaticEndpointXMLFilename(swigCPtr, this, str);
   }
 
-  public void static_edp_xml_config(String str) {
-    FastRTPSJNI.DiscoverySettings_static_edp_xml_config__SWIG_0(swigCPtr, this, str);
-  }
-
-  public String static_edp_xml_config() {
-    return FastRTPSJNI.DiscoverySettings_static_edp_xml_config__SWIG_1(swigCPtr, this);
-  }
-
 }

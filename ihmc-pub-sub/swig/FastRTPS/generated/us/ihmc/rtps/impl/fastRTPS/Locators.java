@@ -8,12 +8,11 @@
 
 package us.ihmc.rtps.impl.fastRTPS;
 
-public class Locators {
+public class Locators extends LocatorsIterator {
   private transient long swigCPtr;
-  protected transient boolean swigCMemOwn;
 
   protected Locators(long cPtr, boolean cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
+    super(FastRTPSJNI.Locators_SWIGUpcast(cPtr), cMemoryOwn);
     swigCPtr = cPtr;
   }
 
@@ -34,6 +33,7 @@ public class Locators {
       }
       swigCPtr = 0;
     }
+    super.delete();
   }
 
   public Locators(SWIGTYPE_p_std__vectorT_eprosima__fastrtps__rtps__Locator_t_t__const_iterator it) {

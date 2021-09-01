@@ -202,15 +202,6 @@ public class ReaderQos {
     return (cPtr == 0) ? null : new DisablePositiveACKsQosPolicy(cPtr, false);
   }
 
-  public void setData_sharing(DataSharingQosPolicy value) {
-    FastRTPSJNI.ReaderQos_data_sharing_set(swigCPtr, this, DataSharingQosPolicy.getCPtr(value), value);
-  }
-
-  public DataSharingQosPolicy getData_sharing() {
-    long cPtr = FastRTPSJNI.ReaderQos_data_sharing_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new DataSharingQosPolicy(cPtr, false);
-  }
-
   public void setQos(ReaderQos readerqos, boolean first_time) {
     FastRTPSJNI.ReaderQos_setQos(swigCPtr, this, ReaderQos.getCPtr(readerqos), readerqos, first_time);
   }

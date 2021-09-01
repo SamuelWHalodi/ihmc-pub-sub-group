@@ -67,20 +67,8 @@ public class FastRTPS implements FastRTPSConstants {
     return FastRTPSJNI.DEFAULT_ROS2_SERVER_GUIDPREFIX_get();
   }
 
-  public static String getDEFAULT_ROS2_MASTER_URI() {
-    return FastRTPSJNI.DEFAULT_ROS2_MASTER_URI_get();
-  }
-
   public static boolean load_environment_server_info(String list, SWIGTYPE_p_std__listT_eprosima__fastdds__rtps__RemoteServerAttributes_t attributes) {
-    return FastRTPSJNI.load_environment_server_info__SWIG_0(list, SWIGTYPE_p_std__listT_eprosima__fastdds__rtps__RemoteServerAttributes_t.getCPtr(attributes));
-  }
-
-  public static boolean load_environment_server_info(SWIGTYPE_p_std__listT_eprosima__fastdds__rtps__RemoteServerAttributes_t attributes) {
-    return FastRTPSJNI.load_environment_server_info__SWIG_1(SWIGTYPE_p_std__listT_eprosima__fastdds__rtps__RemoteServerAttributes_t.getCPtr(attributes));
-  }
-
-  public static String ros_discovery_server_env() {
-    return FastRTPSJNI.ros_discovery_server_env();
+    return FastRTPSJNI.load_environment_server_info(list, SWIGTYPE_p_std__listT_eprosima__fastdds__rtps__RemoteServerAttributes_t.getCPtr(attributes));
   }
 
   public static boolean get_server_client_default_guidPrefix(int id, SWIGTYPE_p_eprosima__fastrtps__rtps__GuidPrefix_t guid) {
@@ -175,22 +163,6 @@ public class FastRTPS implements FastRTPSConstants {
     return TypeConsistencyKind.swigToEnum(FastRTPSJNI.ALLOW_TYPE_COERCION_get());
   }
 
-  public static DataSharingKind getAUTO() {
-    return DataSharingKind.swigToEnum(FastRTPSJNI.AUTO_get());
-  }
-
-  public static DataSharingKind getON() {
-    return DataSharingKind.swigToEnum(FastRTPSJNI.ON_get());
-  }
-
-  public static DataSharingKind getOFF() {
-    return DataSharingKind.swigToEnum(FastRTPSJNI.OFF_get());
-  }
-
-  public static int getLENGTH_UNLIMITED() {
-    return FastRTPSJNI.LENGTH_UNLIMITED_get();
-  }
-
   public static short getLocatorOctet(int octet, Locator_t locator) {
     return FastRTPSJNI.getLocatorOctet(octet, Locator_t.getCPtr(locator), locator);
   }
@@ -199,8 +171,8 @@ public class FastRTPS implements FastRTPSConstants {
     FastRTPSJNI.setLocatorOctet(Locator_t.getCPtr(locator), locator, oct, value);
   }
 
-  public static Locator_t getLocator(LocatorList list, int index) {
-    long cPtr = FastRTPSJNI.getLocator(LocatorList.getCPtr(list), list, index);
+  public static Locator_t getLocator(LocatorList_t list, int index) {
+    long cPtr = FastRTPSJNI.getLocator(LocatorList_t.getCPtr(list), list, index);
     return (cPtr == 0) ? null : new Locator_t(cPtr, false);
   }
 
